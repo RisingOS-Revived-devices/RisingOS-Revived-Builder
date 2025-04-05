@@ -84,15 +84,6 @@ function clone_repository {
   return 0
 }
 
-function check_vendorsetup {
-  local dest_dir=$1
-  if [[ -f "$dest_dir/vendorsetup.sh" ]]; then
-    echo "Error: vendorsetup.sh found in $dest_dir. Please remove it and add to rising.dependencies."
-    return 1
-  fi
-  return 0
-}
-
 function process_dependencies {
   local dest_dir=$1
   local dependencies_file
